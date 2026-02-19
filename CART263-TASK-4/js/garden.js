@@ -7,6 +7,8 @@ window.onload = function () {
     nuts: [],
     // How many flowers in the garden
     numFlowers: 40,
+    // How many nuts in the garden
+    numNuts: 10,
     /*grass object */
     grass: {
       // The color of the grass (background)
