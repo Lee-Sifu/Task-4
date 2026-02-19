@@ -1,9 +1,8 @@
 class Nut {
-    constructor(x, y, size, nutColor) {
+    constructor(x, y, size,) {
         this.x = x;
         this.y = y;
         this.size = size;
-        this.nutColor = nutColor;
     }
     renderNut() {
         // create an <img> element to render the nut image
