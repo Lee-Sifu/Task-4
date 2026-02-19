@@ -73,8 +73,38 @@ window.onload = function () {
       // Add the flower to the array of flowers
       garden.flowers[i].renderFlower();
     }
+
+    //create some nuts
+    for (let i = 0; i < garden.numNuts; i++) {
+
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * 80
+
+      let size = Math.random() * 25 + 15;
+
+      // Create a new nut using the arguments
+      let nut = new Nut(x, y, size);
+      // Add the nut to the array of nuts
+      garden.nuts.push(nut);
+    }
+
+    for (let i = 0; i < garden.nuts.length; i++) {
+      garden.nuts[i].renderNut();
+    }
+    createAndRenderTheGarden();
   }
-  createAndRenderTheGarden();
+
+  function spawnNewNut() {
+    let x = Math.random() * window.innerWidth;
+    let y = Math.random() * 80
+
+    let size = Math.random() * 25 + 15;
+
+    let nut = new Nut(x, y, size);
+
+    garden.nuts.push(nut);
+    nut.renderNut();
+  }
 }
 
 
