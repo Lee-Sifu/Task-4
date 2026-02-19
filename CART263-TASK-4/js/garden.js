@@ -91,8 +91,8 @@ window.onload = function () {
     for (let i = 0; i < garden.nuts.length; i++) {
       garden.nuts[i].renderNut();
     }
-    createAndRenderTheGarden();
   }
+  createAndRenderTheGarden();
 
   function spawnNewNut() {
     let x = Math.random() * window.innerWidth;
