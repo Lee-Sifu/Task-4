@@ -35,5 +35,8 @@ class Nut {
                 this.element = null;
             }, 300);
         }
-}
+         if (typeof spawnNewNut === "function") {
+            spawnNewNut();
+        }
+  }
 }
