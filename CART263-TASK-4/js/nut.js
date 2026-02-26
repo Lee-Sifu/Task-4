@@ -3,6 +3,8 @@ class Nut {
         this.x = x;
         this.y = y;
         this.size = size;
+        this.active = true;
+        this.element = null;
     }
     renderNut() {
         // create an <img> element to render the nut image
@@ -15,6 +17,8 @@ class Nut {
         nutImg.style.position = "absolute";
         nutImg.style.left = this.x + "px";
         nutImg.style.top = this.y + "px";
+         nutImg.style.transition = "opacity 0.3s ease";
         document.getElementsByClassName("grass")[0].appendChild(nutImg);
+        this.element = nutImg;
     }
 }
