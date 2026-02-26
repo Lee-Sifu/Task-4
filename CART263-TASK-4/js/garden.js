@@ -106,15 +106,17 @@ window.onload = function () {
     nut.renderNut();
   }
 }
-
+// Function to check for collisions between squirrels and nuts
  window.checkNutCollisions = function (squirrel) {
     const pickupRadius = squirrel.size; 
     for (let i = 0; i < garden.nuts.length; i++) {
         let nut = garden.nuts[i];
+        // Only check for collision if the nut is active
         if (nut.active) {
             let dx = squirrel.x - nut.x;
             let dy = squirrel.y - nut.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
+            // If the distance is less than the sum of the pickup radius and half the nut's size, we consider it a collision
             if (distance < pickupRadius + nut.size / 2) {
                 nut.pickup();
             }

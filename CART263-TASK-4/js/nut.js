@@ -6,6 +6,7 @@ class Nut {
         this.active = true;
         this.element = null;
     }
+    // method to render the nut on the screen
     renderNut() {
         // create an <img> element to render the nut image
         let nutImg = document.createElement("img");
@@ -21,10 +22,11 @@ class Nut {
         document.getElementsByClassName("grass")[0].appendChild(nutImg);
         this.element = nutImg;
     }
+    // method to handle picking up the nut
      pickup() {
         if (!this.active) return; 
         this.active = false;
-
+// Remove the nut from the screen
         if (this.element) {
             // Fade out visually before removing
             this.element.style.opacity = "0";
@@ -35,6 +37,7 @@ class Nut {
                 this.element = null;
             }, 300);
         }
+        // Spawn a new nut after picking up the current one
          if (typeof spawnNewNut === "function") {
             spawnNewNut();
         }
