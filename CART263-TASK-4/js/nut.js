@@ -21,4 +21,19 @@ class Nut {
         document.getElementsByClassName("grass")[0].appendChild(nutImg);
         this.element = nutImg;
     }
+     pickup() {
+        if (!this.active) return; 
+        this.active = false;
+
+        if (this.element) {
+            // Fade out visually before removing
+            this.element.style.opacity = "0";
+            setTimeout(() => {
+                if (this.element && this.element.parentNode) {
+                    this.element.parentNode.removeChild(this.element);
+                }
+                this.element = null;
+            }, 300);
+        }
+}
 }
