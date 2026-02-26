@@ -107,6 +107,20 @@ window.onload = function () {
   }
 }
 
+ window.checkNutCollisions = function (squirrel) {
+    const pickupRadius = squirrel.size; 
+    for (let i = 0; i < garden.nuts.length; i++) {
+        let nut = garden.nuts[i];
+        if (nut.active) {
+            let dx = squirrel.x - nut.x;
+            let dy = squirrel.y - nut.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < pickupRadius + nut.size / 2) {
+                nut.pickup();
+            }
+          }
+        }
+      }
 
 /*** TEAM A AND B NEED TO COORDINATE
  
